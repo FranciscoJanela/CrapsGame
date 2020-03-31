@@ -28,7 +28,15 @@ while fichas>0:
                     
                 else:
                     
-            
+            elif tipo_de_aposta == 'Field':
+                if somap == 5 or somap == 6 or somap == 7 or somap == 8:
+                    fichas -= fichas
+                elif somap == 3 or somap == 4 or somap == 9 or somap == 10 or somap == 11:
+                    fichas += aposta
+                elif somap == 2:
+                    fichas = fichas + aposta*2 + aposta
+                elif somap == 12:
+                    ficahs = fichas + aposta*3 + aposta
         elif tipo_de_fase=='Point':
             dado1p = random.randint(1, 6)
             dado2p = random.randint(1, 6)
