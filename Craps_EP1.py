@@ -37,6 +37,11 @@ while fichas>0:
                     fichas += aposta*2
                 elif soma_co == 12:
                     fichas += aposta*3
+            elif tipo_de_aposta == 'Any Craps':
+                if soma_co == 2 or soma_co == 3 or soma_co == 12:
+                    ficahs += aposta*7
+                else:
+                    fichas -= aposta
             elif tipo_de_aposta=='Twelve':
                 if soma_co==12:
                     fichas+=aposta*30
@@ -61,6 +66,11 @@ while fichas>0:
                     fichas += aposta*2
                 elif soma_p == 12:
                     fichas += aposta*3
+            elif tipo_de_aposta == 'Any Craps':
+                if soma_p == 2 or soma_p == 3 or soma_p == 12:
+                    ficahs += aposta*7
+                else:
+                    fichas -= aposta
             elif tipo_de_aposta=='Twelve':
                 if soma_p==12:
                     fichas+=aposta*30
