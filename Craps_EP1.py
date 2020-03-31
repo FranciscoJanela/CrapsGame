@@ -15,11 +15,11 @@ def pass_line_bet(soma,fichas,aposta,tipo_de_fase):
         tipo_de_fase='Point'
         fichas=ficha
         aposta_point=aposta
-        Point=soma
-    resultado[fichas,tipo_de_fase,Point,aposta_point]
+        point=soma
+    resultado[fichas,tipo_de_fase,point,aposta_point]
     return resultado
 
-def point(Point,soma,fichas,aposta_point,tipo_de_fase):
+def Point(point,soma,fichas,aposta_point,tipo_de_fase):
     if soma==Point:
         fichas+=2*aposta_point
         tipo_de_fase='Come out'
