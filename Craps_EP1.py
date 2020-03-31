@@ -20,7 +20,7 @@ def pass_line_bet(soma,fichas,aposta,tipo_de_fase):
     return resultado
 
 def Point(point,soma,fichas,aposta_point,tipo_de_fase):
-    if soma==Point:
+    if soma==point:
         fichas+=2*aposta_point
         tipo_de_fase='Come out'
     elif soma==7:
