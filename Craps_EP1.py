@@ -37,10 +37,16 @@ while fichas>0:
                     fichas += aposta*2
                 elif soma_co == 12:
                     fichas += aposta*3
+            elif tipo_de_aposta=='Twelve':
+                if soma_co==12:
+                    fichas+=aposta*30
+                else:
+                    fichas-=aposta
+            
         elif tipo_de_fase=='Point':
             dado1p = random.randint(1, 6)
             dado2p = random.randint(1, 6)
-            somap = dado1p + dado2p
+            soma_p = dado1p + dado2p
             print('Está na fase Point,\ntem disponível os seguintes tipos de aposta')
             print(' - Field\n - Any Craps\n - Twelve')
             print('(para escolher digite exatamente o nome do tipo de aposta)')
@@ -55,6 +61,11 @@ while fichas>0:
                     fichas += aposta*2
                 elif soma_p == 12:
                     fichas += aposta*3
+            elif tipo_de_aposta=='Twelve':
+                if soma_p==12:
+                    fichas+=aposta*30
+                else:
+                    fichas-=aposta
                 
             
     elif in_out=='sair':
