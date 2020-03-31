@@ -36,7 +36,7 @@ while fichas>0:
                 elif soma_co == 2:
                     fichas += aposta*2
                 elif soma_co == 12:
-                    ficahs += aposta*3
+                    fichas += aposta*3
         elif tipo_de_fase=='Point':
             dado1p = random.randint(1, 6)
             dado2p = random.randint(1, 6)
@@ -47,14 +47,14 @@ while fichas>0:
             tipo_de_aposta =input('a aposta será: ')
             valor_da_aposta=int(input('o valor da aposta será: '))
             if tipo_de_aposta=='Field':
-                if soma_co == 5 or soma_co == 6 or soma_co == 7 or soma_co == 8:
+                if soma_p == 5 or soma_p == 6 or soma_p == 7 or soma_p == 8:
                     fichas -= aposta
-                elif soma_co == 3 or soma_co == 4 or soma_co == 9 or soma_co == 10 or soma_co == 11:
+                elif soma_p == 3 or soma_p == 4 or soma_p == 9 or soma_p == 10 or soma_p == 11:
                     fichas += aposta
-                elif soma_co == 2:
+                elif soma_p == 2:
                     fichas += aposta*2
-                elif soma_co == 12:
-                    ficahs += aposta*3
+                elif soma_p == 12:
+                    fichas += aposta*3
                 
             
     elif in_out=='sair':
