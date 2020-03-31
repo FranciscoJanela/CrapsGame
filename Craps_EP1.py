@@ -10,13 +10,13 @@ def pass_line_bet(soma,fichas,aposta,tipo_de_fase):
     if soma==7 or soma==11:
         fichas+=aposta*2
     elif soma==2 or soma==3 or soma==12:
-        ficha=ficha
+        fichas=fichas
     else:
         tipo_de_fase='Point'
         fichas=ficha
         aposta_point=aposta
         point=soma
-    resultado[fichas,tipo_de_fase,point,aposta_point]
+    resultado=[fichas,tipo_de_fase,point,aposta_point]
     return resultado
 
 def pointBet(point,soma,fichas,aposta_point,tipo_de_fase):
@@ -24,9 +24,8 @@ def pointBet(point,soma,fichas,aposta_point,tipo_de_fase):
         fichas+=2*aposta_point
         tipo_de_fase='Come out'
     elif soma==7:
-        ficha=ficha
+        fichas=fichas
         tipo_de_fase='Come out'
-    else:
     resultado=[fichas,tipo_de_fase]
     return resultado
 
@@ -55,7 +54,9 @@ def twelve(soma,fichas,aposta):
         fichas=fichas
     return fichas
 
-fichas = int(imput('Quantas fichas você quer? '))
+fichas = int(input('Quantas fichas você quer? '))
+point=0
+soma=0
 tipo_de_fase=str('Come out')
 while fichas>0:
     in_out=input('deseja apostar ou sair?\n(digite "apostar" ou "sair")\nResposta:')
