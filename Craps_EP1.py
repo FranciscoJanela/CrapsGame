@@ -74,9 +74,9 @@ while fichas>0:
             if tipo_de_aposta=='Pass Line Bet':
                 
             elif tipo_de_aposta == 'Field':
-                
+                fichas = field(soma_co, fichas, aposta)
             elif tipo_de_aposta == 'Any Craps':
-                
+                fichas = any_craps(soma_co, fichas, aposta)
             elif tipo_de_aposta=='Twelve':
                 
             else:
@@ -92,9 +92,9 @@ while fichas>0:
             valor_da_aposta=int(input('o valor da aposta será: '))
             fichas-=aposta
             if tipo_de_aposta=='Field':
-                
+                fichas = field(soma_p, fichas, aposta)
             elif tipo_de_aposta == 'Any Craps':
-                
+                fichas = any_craps(soma_p, fichas, aposta)
             elif tipo_de_aposta=='Twelve':
 
             else:
