@@ -6,6 +6,30 @@ Craps!
 """
 import random
 
+def pass_line_bet(soma,fichas,aposta,tipo_de_fase):
+    if soma==7 or soma==11:
+        fichas+=aposta*2
+    elif soma==2 or soma==3 or soma==12:
+        ficha=ficha
+    else:
+        tipo_de_fase='Point'
+        fichas=ficha
+        aposta_point=aposta
+        Point=soma
+    resultado[fichas,tipo_de_fase,Point,aposta_point]
+    return resultado
+
+def point(Point,soma,fichas,aposta_point,tipo_de_fase):
+    if soma==Point:
+        fichas+=2*aposta_point
+        tipo_de_fase='Come out'
+    elif soma==7:
+        ficha=ficha
+        tipo_de_fase='Come out'
+    else:
+    resultado=[fichas,tipo_de_fase]
+    return resultado
+
 def field(soma, fichas, aposta):
     if soma == 5 or soma == 6 or soma == 7 or soma == 8:
         fichas = fichas
@@ -24,7 +48,12 @@ def any_craps(soma, fichas, aposta):
         fichas = fichas
     return fichas
 
-
+def twelve(soma,fichas,aposta):
+    if soma==12:
+        fichas+=aposta*31
+    else:
+        fichas=fichas
+    return fichas
 
 fichas = int(imput('Quantas fichas você quer? '))
 tipo_de_fase=str('Come out')
