@@ -4,7 +4,7 @@ Craps!
 
 @author: Francisco Janela & Nicolas Queiroga
 """
-fichas = 100
+fichas = int(imput('Quantas fichas você quer? '))
 while fichas>0:
     dado1 = random.randint(1, 6)
     dado2 = random.randint(1, 6)
