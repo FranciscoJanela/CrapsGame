@@ -20,7 +20,7 @@ while fichas>0:
             print(' - Pass Line Bet\n - Field\n - Any Craps\n - Twelve')
             print('(para escolher digite exatamente o nome do tipo de aposta)')
             tipo_de_aposta =input('a aposta será: ')
-            valor_da_aposta=int(input('o valor da aposta será: '))
+            aposta=int(input('o valor da aposta será: '))
             if tipo_de_aposta=='Pass Line Bet':
                 if soma_co==7 or soma_co==11:
                     fichas+=
@@ -46,6 +46,9 @@ while fichas>0:
             print('(para escolher digite exatamente o nome do tipo de aposta)')
             tipo_de_aposta =input('a aposta será: ')
             valor_da_aposta=int(input('o valor da aposta será: '))
+            if tipo_de_aposta=='Field':
+                
+            
     elif in_out=='sair':
         break
     else:
