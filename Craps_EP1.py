@@ -119,6 +119,7 @@ while fichas>0:
                 print('resposta inválida, tente novamente')
             
     elif in_out=='sair':
+        print('Você saiu do jogo')
         break
     else:
         print('resposta inválida')
