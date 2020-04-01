@@ -1,4 +1,5 @@
 import tipoAposta as tA
+import random
 
 def come_out(fichas,tipo_de_fase):
   print('Você está na fase Come Out')
