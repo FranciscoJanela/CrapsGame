@@ -4,9 +4,7 @@ import essencialCraps as eC
 
 def come_out(fichas,tipo_de_fase):
   print('Você está na fase Come Out')
-  dado1co = random.randint(1, 6)
-  dado2co = random.randint(1, 6)
-  soma_co = dado1co + dado2co
+  soma_co = eC.soma_dos_dados()
   print('Está na fase Come Out,\ntem disponível os seguintes tipos de aposta')
   print(' - Pass Line Bet\n - Field\n - Any Craps\n - Twelve')
   print('(para escolher digite exatamente o nome do tipo de aposta)')
@@ -31,9 +29,7 @@ def come_out(fichas,tipo_de_fase):
   return resultado
 
 def fase_point(fichas, tipo_de_fase, Point, aposta_point)           
-  dado1p = random.randint(1, 6)
-  dado2p = random.randint(1, 6)
-  soma_p = dado1p + dado2p
+  soma_p = eC.soma_dos_dados()
   print('Está na fase Point,\ntem disponível os seguintes tipos de aposta')
   print(' - Field\n - Any Craps\n - Twelve\n - somente Point')
   print('(para escolher digite exatamente o nome do tipo de aposta)')
