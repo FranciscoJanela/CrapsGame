@@ -17,7 +17,7 @@ def resposta_da_aposta(fichas,vitoria,tipo_de_aposta):
         if vitoria=='point vitoria':
             print('Você ganhou no Point!\nvoltará para a fase Come Out, parabéns!\nVocê agora tem {0} fichas.'.format(fichas))
         elif vitoria=='point mantem':
-            print('Você se mantem na fase Point.\nVocê agora tem {0} fichas.'.format(fichas))
+            print('Você se mantem na fase Point.\nContinua com {0} fichas.'.format(fichas))
         else:
             print('Que pena, você perdeu no Point...\nVoltará para a fase Come Out.\nVocê agora tem {0} fichas.'.format(fichas))
     fim_resposta='***'

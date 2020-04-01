@@ -5,7 +5,7 @@ Craps!
 @author: Francisco Janela & Nicolas Queiroga
 """
 import functionCraps as fC
-import essencialCraps as eC
+import essencialsCraps as eC
 
 fichas = int(input('Quantas fichas você quer? '))
 point=0

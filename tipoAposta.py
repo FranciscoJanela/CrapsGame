@@ -1,4 +1,4 @@
-import essencialCraps as eC
+import essencialsCraps as eC
 
 
 def pass_line_bet(soma,fichas,aposta,tipo_de_fase):
