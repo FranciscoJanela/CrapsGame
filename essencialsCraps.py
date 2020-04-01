@@ -23,4 +23,4 @@ def resposta_da_aposta(fichas,vitoria,tipo_de_aposta):
     fim_resposta='***'
     return fim_resposta
 
-print(resposta_da_aposta(10,True,'Field'))
+#print(resposta_da_aposta(10,True,'Field'))

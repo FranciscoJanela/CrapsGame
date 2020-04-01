@@ -11,7 +11,6 @@ def pass_line_bet(soma,fichas,aposta,tipo_de_fase):
         vitoria = False
     else:
         tipo_de_fase='Point'
-        vitoria = False
         aposta_point=aposta
         point=soma
         vitoria='point'
@@ -21,12 +20,14 @@ def pass_line_bet(soma,fichas,aposta,tipo_de_fase):
 def pointBet(point,soma,fichas,aposta_point,tipo_de_fase):
     if soma==point:
         fichas+=2*aposta_point
-        vitoria = True
+        vitoria = 'point vitoria'
         tipo_de_fase='Come out'
     elif soma==7:
-        vitoria = False
+        vitoria = 'point perda'
         tipo_de_fase='Come out'
-    resultado=[fichas,tipo_de_fase]
+    else:
+        vitoria = 'point mantem'
+    resultado=[fichas,tipo_de_fase,vitoria]
     return resultado
 
 def field(soma, fichas, aposta):
@@ -41,7 +42,7 @@ def field(soma, fichas, aposta):
     elif soma == 12:
         fichas += aposta*4
         vitoria = True
-    resultado=[fichas,tipo_de_fase]
+    resultado=[fichas,vitoria]
     return resultado
 
 def any_craps(soma, fichas, aposta):
@@ -50,7 +51,7 @@ def any_craps(soma, fichas, aposta):
         vitoria = True
     else:
         fichas = fichas
-    resultado=[fichas,tipo_de_fase]
+    resultado=[fichas,vitoria]
     return resultado
 
 def twelve(soma,fichas,aposta):
@@ -59,5 +60,5 @@ def twelve(soma,fichas,aposta):
         vitoria = True
     else:
         fichas=fichas
-    resultado=[fichas,tipo_de_fase]
+    resultado=[fichas,vitoria]
     return resultado
