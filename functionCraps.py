@@ -51,31 +51,38 @@ def fase_point(fichas, tipo_de_fase, Point, aposta_point)
       resultado = tA.field(soma_p, fichas, aposta)
       fichas=resultado[0]
       vitoria=resultado[1]
+      print(resposta_da_aposta(fichas,vitoria,tipo_De_aposta))
       resultado=pointBet(point,soma,fichas,aposta_point,tipo_de_fase)
       fichas=resultado[0]
       tipo_de_fase=resultado[1]
       vitoria=resultado[2]
+      print(resposta_da_aposta(fichas,vitoria,tipo_De_aposta))
   elif tipo_de_aposta == 'Any Craps':
       resultado = tA.any_craps(soma_co, fichas, aposta)
       fichas=resultado[0]
       vitoria=resultado[1]
+      print(resposta_da_aposta(fichas,vitoria,tipo_De_aposta))
       resultado=pointBet(point,soma,fichas,aposta_point,tipo_de_fase)
       fichas=resultado[0]
       tipo_de_fase=resultado[1]
       vitoria=resultado[2]
+      print(resposta_da_aposta(fichas,vitoria,tipo_De_aposta))
   elif tipo_de_aposta=='Twelve':
       resultado = tA.twelve(soma_co,fichas,aposta)
       fichas=resultado[0]
       vitoria=resultado[1]
+      print(resposta_da_aposta(fichas,vitoria,tipo_De_aposta))
       resultado=pointBet(point,soma,fichas,aposta_point,tipo_de_fase)
       fichas=resultado[0]
       tipo_de_fase=resultado[1]
       vitoria=resultado[2]
+      print(resposta_da_aposta(fichas,vitoria,tipo_De_aposta))
   elif tipo_de_aposta=='somente Point':
       resultado=pointBet(point,soma,fichas,aposta_point,tipo_de_fase)
       fichas=resultado[0]
       tipo_de_fase=resultado[1]
       vitoria=resultado[2]
+      print(resposta_da_aposta(fichas,vitoria,tipo_De_aposta))
   else:
       print('resposta inválida, tente novamente')
   resultado_pointbet=[fichas, tipo_de_fase]
