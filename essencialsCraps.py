@@ -6,13 +6,21 @@ def soma_dos_dados():
     soma=dado1+dado2
     return soma
 
-def resposta_da_aposta(fichas,vitoria):
+def resposta_da_aposta(fichas,vitoria,tipo_de_aposta):
     if vitoria==True:
-        print('parabéns! Sua aposta rendeu!\n você agora tem {0} fichas.'.format(fichas))
+        print('Parabéns! Sua aposta em {0} rendeu!\nVocê agora tem {1} fichas.'.format(tipo_de_aposta,fichas))
     elif vitoria=='point':
-        print('Você foi para a fase de Point! Sua aposta ainda continua valendo.\n você agora tem {0} fichas.'.format(fichas))
+        print('Você foi para a fase de Point! Sua aposta ainda continua valendo.\nVocê agora tem {0} fichas.'.format(fichas))
+    elif vitoria==False:
+        print('Que pena... Você perdeu a aposta em {0}.\nVocê agora tem {1} fichas.'.format(tipo_de_aposta,fichas))
     else:
-        print('Que pena... Você perdeu a aposta.\n você agora tem {0} fichas.'.format(fichas))
-    return vitoria
+        if vitoria=='point vitoria':
+            print('Você ganhou no Point!\nvoltará para a fase Come Out, parabéns!\nVocê agora tem {0} fichas.'.format(fichas))
+        elif vitoria=='point mantem':
+            print('Você se mantem na fase Point.\nVocê agora tem {0} fichas.'.format(fichas))
+        else:
+            print('Que pena, você perdeu no Point...\nVoltará para a fase Come Out.\nVocê agora tem {0} fichas.'.format(fichas))
+    fim_resposta='***'
+    return fim_resposta
 
-    
+print(resposta_da_aposta(10,True,'Field'))
