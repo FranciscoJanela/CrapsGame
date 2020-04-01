@@ -6,14 +6,17 @@ def pass_line_bet(soma,fichas,aposta,tipo_de_fase):
     aposta_point = 0
     if soma == 7 or soma == 11:
         fichas += aposta*2
+        vitoria=True
     elif soma == 2 or soma == 3 or soma == 12:
         fichas = fichas
+        vitoria=False
     else:
         tipo_de_fase='Point'
-        fichas=ficha
+        fichas=fichas
         aposta_point=aposta
         point=soma
-    resultado=[fichas,tipo_de_fase,point,aposta_point]
+        vitoria='point'
+    resultado=[fichas,tipo_de_fase,point,aposta_point,vitoria]
     return resultado
 
 def pointBet(point,soma,fichas,aposta_point,tipo_de_fase):

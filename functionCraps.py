@@ -17,6 +17,7 @@ def come_out(fichas,tipo_de_fase):
       tipo_de_fase=resultado[1]
       Point=resultado[2]
       aposta_point=resultado[3]
+      vitoria=resultado[4]
   elif tipo_de_aposta == 'Field':
       fichas = tA.field(soma_co, fichas, aposta)
   elif tipo_de_aposta == 'Any Craps':
