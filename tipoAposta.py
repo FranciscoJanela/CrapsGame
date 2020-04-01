@@ -1,8 +1,10 @@
 def pass_line_bet(soma,fichas,aposta,tipo_de_fase):
-    if soma==7 or soma==11:
-        fichas+=aposta*2
-    elif soma==2 or soma==3 or soma==12:
-        fichas=fichas
+    point = 0
+    aposta_point = 0
+    if soma == 7 or soma == 11:
+        fichas += aposta*2
+    elif soma == 2 or soma == 3 or soma == 12:
+        fichas = fichas
     else:
         tipo_de_fase='Point'
         fichas=ficha
