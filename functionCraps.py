@@ -1,4 +1,4 @@
-import tipoAposta.py as tA
+import tipoAposta as tA
 
 def come_out(fichas,tipo_de_fase):
   print('Você está na fase Come Out')
