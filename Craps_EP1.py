@@ -5,7 +5,7 @@ Craps!
 @author: Francisco Janela & Nicolas Queiroga
 """
 import random
-import functionCraps.py as fC
+import functionCraps as fC
 
 fichas = int(input('Quantas fichas você quer? '))
 point=0
