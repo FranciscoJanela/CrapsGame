@@ -1,5 +1,6 @@
 import tipoAposta as tA
 import random
+import essencialCraps as eC
 
 def come_out(fichas,tipo_de_fase):
   print('Você está na fase Come Out')
