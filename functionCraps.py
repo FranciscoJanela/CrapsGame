@@ -25,5 +25,5 @@ def come_out(fichas,tipo_de_fase):
       fichas=tA.twelve(soma_co,fichas,aposta)
   else:
       print('resposta inválida, tente novamente
-  resultado=[fichas,tipo_de_fase]
+  resultado=[fichas,tipo_de_fase,Point,aposta_point]
   return resultado
