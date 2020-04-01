@@ -1,4 +1,6 @@
-def come_out():
+import tipoAposta.py as tA
+
+def come_out(fichas,tipo_de_fase):
   print('Você está na fase Come Out')
   dado1co = random.randint(1, 6)
   dado2co = random.randint(1, 6)
@@ -10,16 +12,18 @@ def come_out():
   aposta=int(input('o valor da aposta será: '))
   fichas-=aposta
   if tipo_de_aposta=='Pass Line Bet':
-      resultado=pass_line_bet(soma_co,fichas,aposta,tipo_de_fase)
+      resultado=tA.pass_line_bet(soma_co,fichas,aposta,tipo_de_fase)
       fichas=resultado[0]
       tipo_de_fase=resultado[1]
       Point=resultado[2]
       aposta_point=resultado[3]
   elif tipo_de_aposta == 'Field':
-      fichas = field(soma_co, fichas, aposta)
+      fichas = tA.field(soma_co, fichas, aposta)
   elif tipo_de_aposta == 'Any Craps':
-      fichas = any_craps(soma_co, fichas, aposta)
+      fichas = tA.any_craps(soma_co, fichas, aposta)
   elif tipo_de_aposta=='Twelve':
-      fichas=twelve(soma_co,fichas,aposta)
+      fichas=tA.twelve(soma_co,fichas,aposta)
   else:
-      print('resposta inválida, tente novamente'
+      print('resposta inválida, tente novamente
+  resultado=[fichas,tipo_de_fase]
+  return resultado
