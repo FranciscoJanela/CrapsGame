@@ -9,7 +9,7 @@ def soma_dos_dados():
 def resposta_da_aposta(fichas,vitoria,tipo_de_aposta):
     if vitoria==True:
         print('Parabéns!\nSua aposta em {0} rendeu!')
-        print('Você agora tem {1} fichas.'.format(tipo_de_aposta,fichas)')
+        print('Você agora tem {1} fichas.'.format(tipo_de_aposta,fichas))
     elif vitoria=='point':
         print('Você foi para a fase de Point!\nSua aposta ainda continua valendo.')
         print('Você agora tem {0} fichas.'.format(fichas))
