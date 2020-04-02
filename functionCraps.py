@@ -7,6 +7,8 @@ Funcionalidades para o jogo Craps
 import tipoAposta as tA
 import essencialsCraps as eC
 
+
+# Computação da fase Come Out
 def fase_come_out(fichas,tipo_de_fase):
   Point=0
   aposta_point=0
@@ -43,6 +45,8 @@ def fase_come_out(fichas,tipo_de_fase):
   resultado_come_out=[fichas,tipo_de_fase,Point,aposta_point]
   return resultado_come_out
 
+
+# Computação da fase Point
 def fase_point(fichas, tipo_de_fase, Point, aposta_point):         
   soma_p = eC.soma_dos_dados()
   print(eC.informa_fase(tipo_de_fase))
