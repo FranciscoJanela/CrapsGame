@@ -6,8 +6,8 @@ Nós, alunos do Insper, desenvolvemos um jogo de Craps em Python.
 ************************************************************************************************************************
 Bem vindo ao Craps:
 Este jogo consiste em apostas sucessivas para o número da soma de dois dados de seis lados dentro de dois tipos de fase:
--Come Out
--Point
+- Come Out
+- Point
 
 Na fase Come Out existem 4 tipos de apostas possíveis de serem feitas:
 - Field:
