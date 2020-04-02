@@ -7,10 +7,13 @@ Craps!
 import functionCraps as fC
 import essencialsCraps as eC
 
-username=input('Username: ')
+# Introdução do jogo
+username=input('Username: ') 
 print(eC.introducao_do_jogo(username))
-fichas = int(input('Quantas fichas você quer para jogar?\nResposta: '))
+fichas = 1000
 tipo_de_fase=str('Come out')
+
+# Fase de apostas
 while fichas>0:
     in_out=input('deseja apostar ou sair?\n(digite "apostar" ou "sair")\nResposta: ')
     if in_out=='apostar':
