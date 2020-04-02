@@ -8,16 +8,16 @@ import functionCraps as fC
 import essencialsCraps as eC
 
 # Introdução do jogo
-username=input('Username: ') 
+username = input('Username: ') 
 print(eC.introducao_do_jogo(username))
 fichas = 1000
-tipo_de_fase=str('Come out')
+tipo_de_fase = str('Come out')
 
 # Fase de apostas
-while fichas>0:
-    in_out=input('deseja apostar ou sair?\n(digite "apostar" ou "sair")\nResposta: ')
-    if in_out=='apostar':
-        if tipo_de_fase=='Come out':
+while fichas > 0:
+    in_out = input('deseja apostar ou sair?\n(digite "apostar" ou "sair")\nResposta: ')
+    if in_out == 'apostar':
+        if tipo_de_fase == 'Come out':
             resultado_come_out = fC.fase_come_out(fichas,tipo_de_fase)
             fichas = resultado_come_out[0]
             tipo_de_fase = resultado_come_out[1]
@@ -28,7 +28,7 @@ while fichas>0:
             fichas = resultado_Point[0]
             tipo_de_fase = resultado_Point[1]
             
-    elif in_out=='sair':
+    elif in_out == 'sair':
         print(eC.sair_do_jogo(username,fichas))
         break
     else:
