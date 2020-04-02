@@ -7,12 +7,12 @@ Craps!
 import functionCraps as fC
 import essencialsCraps as eC
 
-fichas = int(input('Quantas fichas você quer? '))
-point=0
-soma=0
+username=input('Username: ')
+print(eC.introducao_do_jogo(username))
+fichas = int(input('Quantas fichas você quer para jogar?\nResposta: '))
 tipo_de_fase=str('Come out')
 while fichas>0:
-    in_out=input('deseja apostar ou sair?\n(digite "apostar" ou "sair")\nResposta:')
+    in_out=input('deseja apostar ou sair?\n(digite "apostar" ou "sair")\nResposta: ')
     if in_out=='apostar':
         if tipo_de_fase=='Come out':
             resultado_come_out = fC.fase_come_out(fichas,tipo_de_fase)
@@ -26,7 +26,9 @@ while fichas>0:
             tipo_de_fase = resultado_Point[1]
             
     elif in_out=='sair':
-        print('Você saiu do jogo')
+        print(eC.sair_do_jogo(username,fichas))
         break
     else:
         print('resposta inválida')
+else:
+    print(eC.fichas_acabaram(username))

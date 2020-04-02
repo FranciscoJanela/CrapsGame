@@ -1,6 +1,9 @@
-import essencialsCraps as eC
+# -*- coding: utf-8 -*-
+"""
+Definição dos tipos de aposta
 
-
+@author: Francisco Janela & Nicolas Queiroga
+"""
 def pass_line_bet(soma,fichas,aposta,tipo_de_fase):
     point = 0
     aposta_point = 0
@@ -50,7 +53,7 @@ def any_craps(soma, fichas, aposta):
         fichas += aposta*8
         vitoria = True
     else:
-        fichas = fichas
+        vitoria = False
     resultado=[fichas,vitoria]
     return resultado
 
@@ -59,6 +62,6 @@ def twelve(soma,fichas,aposta):
         fichas+=aposta*31
         vitoria = True
     else:
-        fichas=fichas
+        vitoria = False
     resultado=[fichas,vitoria]
     return resultado

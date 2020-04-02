@@ -1,12 +1,17 @@
+# -*- coding: utf-8 -*-
+"""
+Funcionalidades para o jogo Craps
+
+@author: Francisco Janela & Nicolas Queiroga
+"""
 import tipoAposta as tA
 import essencialsCraps as eC
 
 def fase_come_out(fichas,tipo_de_fase):
+  Point=0
+  aposta_point=0
   soma_co = eC.soma_dos_dados()
-  print('Você está na fase Come Out')
-  print('Está na fase Come Out,\ntem disponível os seguintes tipos de aposta')
-  print(' - Pass Line Bet\n - Field\n - Any Craps\n - Twelve')
-  print('(para escolher digite exatamente o nome do tipo de aposta)')
+  print(eC.informa_fase(tipo_de_fase))
   tipo_de_aposta =input('a aposta será: ')
   aposta=int(input('o valor da aposta será: '))
   fichas -= aposta
@@ -40,9 +45,7 @@ def fase_come_out(fichas,tipo_de_fase):
 
 def fase_point(fichas, tipo_de_fase, Point, aposta_point):         
   soma_p = eC.soma_dos_dados()
-  print('Está na fase Point,\ntem disponível os seguintes tipos de aposta')
-  print(' - Field\n - Any Craps\n - Twelve\n - somente Point')
-  print('(para escolher digite exatamente o nome do tipo de aposta)')
+  print(eC.informa_fase(tipo_de_fase))
   tipo_de_aposta =input('a aposta será: ')
   aposta=int(input('o valor da aposta será: '))
   fichas-=aposta
