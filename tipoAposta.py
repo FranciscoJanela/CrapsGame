@@ -4,6 +4,8 @@ Definição dos tipos de aposta
 
 @author: Francisco Janela & Nicolas Queiroga
 """
+
+# Computação do tipo de aposta Pass Line Bet
 def pass_line_bet(soma,fichas,aposta,tipo_de_fase):
     point = 0
     aposta_point = 0
@@ -13,24 +15,25 @@ def pass_line_bet(soma,fichas,aposta,tipo_de_fase):
     elif soma == 2 or soma == 3 or soma == 12:
         vitoria = False
     else:
-        tipo_de_fase='Point'
-        aposta_point=aposta
+        tipo_de_fase = 'Point'
+        aposta_point = aposta
         point=soma
-        vitoria='point'
-    resultado=[fichas,tipo_de_fase,point,aposta_point,vitoria]
+        vitoria = 'point'
+    resultado = [fichas,tipo_de_fase,point,aposta_point,vitoria]
     return resultado
 
+# Computação do tipo de aposta Point Bet
 def pointBet(point,soma,fichas,aposta_point,tipo_de_fase):
-    if soma==point:
-        fichas+=2*aposta_point
+    if soma == point:
+        fichas += 2*aposta_point
         vitoria = 'point vitoria'
-        tipo_de_fase='Come out'
-    elif soma==7:
+        tipo_de_fase = 'Come out'
+    elif soma == 7:
         vitoria = 'point perda'
-        tipo_de_fase='Come out'
+        tipo_de_fase = 'Come out'
     else:
         vitoria = 'point mantem'
-    resultado=[fichas,tipo_de_fase,vitoria]
+    resultado = [fichas,tipo_de_fase,vitoria]
     return resultado
 
 def field(soma, fichas, aposta):
@@ -45,23 +48,25 @@ def field(soma, fichas, aposta):
     elif soma == 12:
         fichas += aposta*4
         vitoria = True
-    resultado=[fichas,vitoria]
+    resultado = [fichas,vitoria]
     return resultado
 
+# Computação do tipo de aposta Any Craps
 def any_craps(soma, fichas, aposta):
     if soma == 2 or soma == 3 or soma == 12:
         fichas += aposta*8
         vitoria = True
     else:
         vitoria = False
-    resultado=[fichas,vitoria]
+    resultado = [fichas,vitoria]
     return resultado
 
+# Computação do tipo de aposta Twelve
 def twelve(soma,fichas,aposta):
-    if soma==12:
-        fichas+=aposta*31
+    if soma == 12:
+        fichas += aposta*31
         vitoria = True
     else:
         vitoria = False
-    resultado=[fichas,vitoria]
+    resultado = [fichas,vitoria]
     return resultado
