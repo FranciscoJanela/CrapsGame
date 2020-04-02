@@ -22,7 +22,7 @@ def introducao_do_jogo(username):
     print('Se a soma da rodada for igual ao Point, receberá a aposta feita no Pass Line Bet\nSe for igual a 7 perde essa aposta.\n')
     print('Você começará o jogo com 1000 fichas.')
     print('Boa sorte nas apostas, {0}!\n'.format(username))
-    fim_da_introdução=40*str('*')
+    fim_da_introdução = 40*str('*')
     return fim_da_introdução
 
 
@@ -32,7 +32,7 @@ def sair_do_jogo(username,fichas):
     print('Obrigado por jogar, {0}'.format(username))
     print('Saiu do jogo com {0} fichas.'.format(fichas))
     print('Volte sempre!')
-    fim_do_jogo=40*str('*')
+    fim_do_jogo = 40*str('*')
     return fim_do_jogo
 
 
@@ -41,49 +41,49 @@ def fichas_acabaram(username):
     print('{0}'.format(str('*')*40))
     print('Que pena... Suas fichas acabaram.')
     print('Volte sempre!')
-    fim_do_jogo=40*str('*')
+    fim_do_jogo = 40*str('*')
     return fim_do_jogo
 
 
 #função que calcula a soma de dois dados de seis lados
 def soma_dos_dados():
-    dado1=random.randint(1,6)
-    dado2=random.randint(1,6)
-    soma=dado1+dado2
+    dado1 = random.randint(1,6)
+    dado2 = random.randint(1,6)
+    soma = dado1 + dado2
     return soma
 
 
 #função que informa ao usuário a fase em que está e suas possíveis apostas
 def informa_fase(tipo_de_fase):
-    if tipo_de_fase=='Come out':
+    if tipo_de_fase == 'Come out':
         print('Está na fase Come Out,\ntem disponível os seguintes tipos de aposta')
         print(' - Pass Line Bet\n - Field\n - Any Craps\n - Twelve')
     else:
         print('Está na fase Point,\ntem disponível os seguintes tipos de aposta')
         print(' - Field\n - Any Craps\n - Twelve\n - somente Point')
-    fim_informa_fase='(para escolher digite exatamente o nome do tipo de aposta)'
+    fim_informa_fase = '(para escolher digite exatamente o nome do tipo de aposta)'
     return fim_informa_fase
 
 
 #função que computa e imprime o resultado da aposta feita pelo usuário
 def resposta_da_aposta(fichas,vitoria,tipo_de_aposta):
-    if vitoria==True:
+    if vitoria == True:
         print('Parabéns!\nSua aposta em {0} rendeu!'.format(tipo_de_aposta))
         print('Você agora tem {0} fichas.'.format(fichas))
-    elif vitoria==False:
+    elif vitoria == False:
         print('Que pena...\nVocê perdeu a aposta em {0}.'.format(tipo_de_aposta))
         print('Você agora tem {0} fichas.'.format(fichas))
-    elif vitoria=='point':
+    elif vitoria == 'point':
         print('Você foi para a fase de Point!\nSua aposta ainda continua valendo.')
         print('Você agora tem {0} fichas.'.format(fichas))
-    elif vitoria=='point vitoria':
+    elif vitoria == 'point vitoria':
         print('Você ganhou no Point!\nvoltará para a fase Come Out, parabéns!')
         print('Você agora tem {0} fichas.'.format(fichas))
-    elif vitoria=='point mantem':
+    elif vitoria == 'point mantem':
         print('Você se mantem na fase Point.')
         print('Continua com {0} fichas.'.format(fichas))
     else:
         print('Que pena, você perdeu no Point...\nVoltará para a fase Come Out.')
         print('Você agora tem {0} fichas.'.format(fichas))
-    fim_resposta='***'
+    fim_resposta = '***'
     return fim_resposta
