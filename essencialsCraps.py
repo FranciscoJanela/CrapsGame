@@ -17,7 +17,7 @@ def introducao_do_jogo(username):
     print('- Any Craps:\n   Se a soma for 2, 3 ou 12 ganha 7 vezes o q apostou\n  Se não perde a aposta')
     print('- Twelve:\n  Se a soma der 12 ganha 35 vezes o que apostou\n  Se não perde a aposta')
     print('- Pass Line Bet:\n  Se a soma der 7 ou 11, recebe a aposta\n  Se for 2, 3 ou 12, perde a aposta\n  Se a soma der outro número, entrará na fase Point e sua aposta ainda vale\n')
-    print('Na fase Point ainda pode apostar em Field, Any Craaps e Twelve, porém:')
+    print('Na fase Point ainda pode apostar em Field, Any Craps e Twelve, porém:')
     print('Nesta fase, a soma na aposta do Pass Line Bet se torna o Point\nE até a soma da rodada ser igual ao Point ou a 7, permanece na fase Point')
     print('Se a soma da rodada for igual ao Point, receberá a aposta feita no Pass Line Bet\nSe for igual a 7 perde essa aposta.\n')
     print('Você começará o jogo com 1000 fichas.')
