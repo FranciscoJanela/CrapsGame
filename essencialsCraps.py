@@ -6,6 +6,7 @@ Funções essenciais para jogo Craps
 """
 import random
 
+#função que imprime as regras do jogo para o usuário
 def introducao_do_jogo(username):
     print('{0}'.format(str('*')*40))
     print('Bem vindo ao Craps, {0}'.format(username))
@@ -19,11 +20,13 @@ def introducao_do_jogo(username):
     print('Na fase Point ainda pode apostar em Field, Any Craaps e Twelve, porém:')
     print('Nesta fase, a soma na aposta do Pass Line Bet se torna o Point\nE até a soma da rodada ser igual ao Point ou a 7, permanece na fase Point')
     print('Se a soma da rodada for igual ao Point, receberá a aposta feita no Pass Line Bet\nSe for igual a 7 perde essa aposta.\n')
+    print('Você começará o jogo com 1000 fichas.')
     print('Boa sorte nas apostas, {0}!\n'.format(username))
     fim_da_introdução=40*str('*')
     return fim_da_introdução
 
 
+#função que imprime resposta caso o usuário não queira mais apostar
 def sair_do_jogo(username,fichas):
     print('{0}'.format(str('*')*40))
     print('Obrigado por jogar, {0}'.format(username))
@@ -33,6 +36,7 @@ def sair_do_jogo(username,fichas):
     return fim_do_jogo
 
 
+#função que imprime a resposta ao usuário caso acabem suas fichas
 def fichas_acabaram(username):
     print('{0}'.format(str('*')*40))
     print('Que pena... Suas fichas acabaram.')
@@ -41,6 +45,7 @@ def fichas_acabaram(username):
     return fim_do_jogo
 
 
+#função que calcula a soma de dois dados de seis lados
 def soma_dos_dados():
     dado1=random.randint(1,6)
     dado2=random.randint(1,6)
@@ -48,6 +53,7 @@ def soma_dos_dados():
     return soma
 
 
+#função que informa ao usuário a fase em que está e suas possíveis apostas
 def informa_fase(tipo_de_fase):
     if tipo_de_fase=='Come out':
         print('Está na fase Come Out,\ntem disponível os seguintes tipos de aposta')
@@ -59,6 +65,7 @@ def informa_fase(tipo_de_fase):
     return fim_informa_fase
 
 
+#função que computa e imprime o resultado da aposta feita pelo usuário
 def resposta_da_aposta(fichas,vitoria,tipo_de_aposta):
     if vitoria==True:
         print('Parabéns!\nSua aposta em {0} rendeu!'.format(tipo_de_aposta))
@@ -80,6 +87,3 @@ def resposta_da_aposta(fichas,vitoria,tipo_de_aposta):
         print('Você agora tem {0} fichas.'.format(fichas))
     fim_resposta='***'
     return fim_resposta
-
-   
-#print(resposta_da_aposta(fichas,vitoria,tipo_de_aposta))
