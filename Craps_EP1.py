@@ -13,7 +13,9 @@ print(eC.introducao_do_jogo(username))
 fichas = 1000
 tipo_de_fase = str('Come out')
 
-# Fase de apostas
+# Fase de apostas:
+# Pergunta se o jogador quer jogar ou sair e efetua a estrutura de apostas do jogo
+# Sai do while se o jogador quisr parar ou se acabarem as fichas
 while fichas > 0:
     in_out = input('deseja apostar ou sair?\n(digite "apostar" ou "sair")\nResposta: ')
     if in_out == 'apostar':
