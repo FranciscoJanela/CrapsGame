@@ -14,9 +14,9 @@ import essencialsCraps as eC
 def fase_come_out(fichas,tipo_de_fase):
   Point = 0
   aposta_point = 0
-  soma_co = eC.soma_dos_dados()
   print(eC.informa_fase(tipo_de_fase))
   apostas_do_usuario=eC.escolhe_apostas(fichas)  # registra um tuple de respostas que seram usadas no while, a linha 0 referente ao tipo de aposta e a linha 1 ao valor apostado
+  soma_co = eC.soma_dos_dados()
   i = 0  # índice de controle do while
   while i<len(apostas_do_usuario):  # computa os tipos de aposta feitos pelo jogador
       if apostas_do_usuario[i][0] == 'Pass Line Bet':
@@ -57,9 +57,9 @@ def fase_come_out(fichas,tipo_de_fase):
 # Pergunta quais as apostas do jogador e quanto vai apostar
 # Calcula as fichas no final do resultado das apostas
 def fase_point(fichas, tipo_de_fase, Point, aposta_point):         
-  soma_p = eC.soma_dos_dados()
   print(eC.informa_fase(tipo_de_fase))
   apostas_do_usuario=eC.escolhe_apostas(fichas) 
+  soma_p = eC.soma_dos_dados()
   i = 0  # índice de controle do while
   while i<len(apostas_do_usuario):  # computa os tipos de aposta feitos pelo jogador
       if apostas_do_usuario[i][0] == 'Field':
@@ -95,7 +95,7 @@ def fase_point(fichas, tipo_de_fase, Point, aposta_point):
           tipo_de_fase = resultado[1]
           vitoria = resultado[2]
           print(eC.resposta_da_aposta(fichas,vitoria,apostas_do_usuario[i][0]))
-      elif apostas_do_usuario[i][0] == 'somente Point':
+      elif apostas_do_usuario[i][0] == 'Somente Point':
           fichas -= apostas_do_usuario[i][1]
           resultado = tA.pointBet(Point,soma_p,fichas,aposta_point,tipo_de_fase)
           fichas = resultado[0]
