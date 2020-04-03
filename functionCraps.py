@@ -16,7 +16,7 @@ def fase_come_out(fichas,tipo_de_fase):
   aposta_point = 0
   soma_co = eC.soma_dos_dados()
   print(eC.informa_fase(tipo_de_fase))
-  apostas_do_usuario=eC.escolhe_apostas(fichas)
+  apostas_do_usuario=eC.escolhe_apostas(fichas)  # registra um tuple de respostas que seram usadas no while, a linha 0 referente ao tipo de aposta e a linha 1 ao valor apostado
   i = 0  # índice de controle do while
   while i<len(apostas_do_usuario):  # computa os tipos de aposta feitos pelo jogador
       if apostas_do_usuario[i][0] == 'Pass Line Bet':
@@ -59,7 +59,7 @@ def fase_come_out(fichas,tipo_de_fase):
 def fase_point(fichas, tipo_de_fase, Point, aposta_point):         
   soma_p = eC.soma_dos_dados()
   print(eC.informa_fase(tipo_de_fase))
-  apostas_do_usuario=eC.escolhe_apostas(fichas)
+  apostas_do_usuario=eC.escolhe_apostas(fichas) 
   i = 0  # índice de controle do while
   while i<len(apostas_do_usuario):  # computa os tipos de aposta feitos pelo jogador
       if apostas_do_usuario[i][0] == 'Field':

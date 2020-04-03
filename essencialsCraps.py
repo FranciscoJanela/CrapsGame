@@ -65,7 +65,8 @@ def informa_fase(tipo_de_fase):
     return fim_informa_fase
 
 
-
+#Integra o sistema de mais de uma aposta por rodada
+#leva em considera;'ao se a resposta do usu]ario ]e adequada e se pode apostar o valor escrito comparando com as fichas que tem
 def escolhe_apostas(fichas):
     print('Que tipo de aposta deseja fazer?\n(caso não queira mais digite terminei)')
     tipo_de_aposta=str('')
@@ -87,7 +88,7 @@ def escolhe_apostas(fichas):
                 break
         else:
             print('Tipo de aposta inválido')
-    return apostas_do_usuario
+    return apostas_do_usuario # A linha 0 leva o valor do tipo de aposa e a linha 1 o valor apostado
             
     
 #função que computa e imprime o resultado da aposta feita pelo usuário
