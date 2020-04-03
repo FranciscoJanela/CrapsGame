@@ -16,37 +16,36 @@ def fase_come_out(fichas,tipo_de_fase):
   aposta_point = 0
   soma_co = eC.soma_dos_dados()
   print(eC.informa_fase(tipo_de_fase))
-  tipo_de_aposta = eC.escolhe_tipo_aposta()
-  aposta = eC.valor_da_aposta(tipo_de_aposta)
+  apostas_do_usuario=eC.escolhe_apostas(fichas)
   i = 0  # índice de controle do while
-  while i<len(tipo_de_aposta):  # computa os tipos de aposta feitos pelo jogador
-      if tipo_de_aposta[i] == 'Pass Line Bet':
-          fichas -= aposta[i]
-          resultado = tA.pass_line_bet(soma_co,fichas,aposta[i],tipo_de_fase[i])
+  while i<len(apostas_do_usuario):  # computa os tipos de aposta feitos pelo jogador
+      if apostas_do_usuario[i][0] == 'Pass Line Bet':
+          fichas -= apostas_do_usuario[i][1]
+          resultado = tA.pass_line_bet(soma_co,fichas,apostas_do_usuario[i][1],tipo_de_fase)
           fichas = resultado[0]
           tipo_de_fase = resultado[1]
           Point = resultado[2]
           aposta_point = resultado[3]
           vitoria = resultado[4]
-          print(eC.resposta_da_aposta(fichas,vitoria,tipo_de_aposta[i]))
-      elif tipo_de_aposta[i] == 'Field':
-          fichas -= aposta[i]
-          resultado = tA.field(soma_co, fichas, aposta[i])
+          print(eC.resposta_da_aposta(fichas,vitoria,apostas_do_usuario[i][0]))
+      elif apostas_do_usuario[i][0] == 'Field':
+          fichas -= apostas_do_usuario[i][1]
+          resultado = tA.field(soma_co, fichas, apostas_do_usuario[i][1])
           fichas = resultado[0]
           vitoria = resultado[1]
-          print(eC.resposta_da_aposta(fichas,vitoria,tipo_de_aposta[i]))
-      elif tipo_de_aposta[i] == 'Any Craps':
-          fichas -= aposta[i]
-          resultado = tA.any_craps(soma_co, fichas, aposta[i])
+          print(eC.resposta_da_aposta(fichas,vitoria,apostas_do_usuario[i][0]))
+      elif apostas_do_usuario[i][0] == 'Any Craps':
+          fichas -= apostas_do_usuario[i][1]
+          resultado = tA.any_craps(soma_co, fichas, apostas_do_usuario[i][1])
           fichas = resultado[0]
           vitoria = resultado[1]
-          print(eC.resposta_da_aposta(fichas,vitoria,tipo_de_aposta[i]))
-      elif tipo_de_aposta[i] == 'Twelve':
-          fichas -= aposta[i]
-          resultado = tA.twelve(soma_co,fichas,aposta[i])
+          print(eC.resposta_da_aposta(fichas,vitoria,apostas_do_usuario[i][0]))
+      elif apostas_do_usuario[i][0] == 'Twelve':
+          fichas -= apostas_do_usuario[i][1]
+          resultado = tA.twelve(soma_co,fichas,apostas_do_usuario[i][1])
           fichas = resultado[0]
           vitoria = resultado[1]
-          print(eC.resposta_da_aposta(fichas,vitoria,tipo_de_aposta[i]))
+          print(eC.resposta_da_aposta(fichas,vitoria,apostas_do_usuario[i][0]))
       else:
           print('resposta inválida, tente novamente')
       i += 1
@@ -60,50 +59,49 @@ def fase_come_out(fichas,tipo_de_fase):
 def fase_point(fichas, tipo_de_fase, Point, aposta_point):         
   soma_p = eC.soma_dos_dados()
   print(eC.informa_fase(tipo_de_fase))
-  tipo_de_aposta = eC.escolhe_tipo_aposta()
-  aposta = eC.valor_da_aposta(tipo_de_aposta)
+  apostas_do_usuario=eC.escolhe_apostas(fichas)
   i = 0  # índice de controle do while
-  while i<len(tipo_de_aposta):  # computa os tipos de aposta feitos pelo jogador
-      if tipo_de_aposta[i] == 'Field':
-          fichas -= aposta[i]
-          resultado = tA.field(soma_p, fichas, aposta[i])
+  while i<len(apostas_do_usuario):  # computa os tipos de aposta feitos pelo jogador
+      if apostas_do_usuario[i][0] == 'Field':
+          fichas -= apostas_do_usuario[i][1]
+          resultado = tA.field(soma_p, fichas, apostas_do_usuario[i][1])
           fichas = resultado[0]
           vitoria = resultado[1]
-          print(eC.resposta_da_aposta(fichas,vitoria,tipo_de_aposta[i]))
+          print(eC.resposta_da_aposta(fichas,vitoria,apostas_do_usuario[i][0]))
           resultado = tA.pointBet(Point,soma_p,fichas,aposta_point,tipo_de_fase)
           fichas = resultado[0]
           tipo_de_fase = resultado[1]
           vitoria = resultado[2]
-          print(eC.resposta_da_aposta(fichas,vitoria,tipo_de_aposta))
-      elif tipo_de_aposta[i] == 'Any Craps':
-          fichas -= aposta[i]
-          resultado = tA.any_craps(soma_p, fichas, aposta[i])
+          print(eC.resposta_da_aposta(fichas,vitoria,apostas_do_usuario[i][0]))
+      elif apostas_do_usuario[i][0] == 'Any Craps':
+          fichas -= apostas_do_usuario[i][1]
+          resultado = tA.any_craps(soma_p, fichas, apostas_do_usuario[i][1])
           fichas = resultado[0]
           vitoria = resultado[1]
-          print(eC.resposta_da_aposta(fichas,vitoria,tipo_de_aposta[i]))
+          print(eC.resposta_da_aposta(fichas,vitoria,apostas_do_usuario[i][0]))
           resultado = tA.pointBet(Point,soma_p,fichas,aposta_point,tipo_de_fase)
           fichas = resultado[0]
           tipo_de_fase = resultado[1]
           vitoria = resultado[2]
-          print(eC.resposta_da_aposta(fichas,vitoria,tipo_de_aposta))
-      elif tipo_de_aposta[i] == 'Twelve':
-          fichas -= aposta[i]
-          resultado = tA.twelve(soma_p,fichas,aposta[i])
+          print(eC.resposta_da_aposta(fichas,vitoria,apostas_do_usuario[i][0]))
+      elif apostas_do_usuario[i][0] == 'Twelve':
+          fichas -= apostas_do_usuario[i][1]
+          resultado = tA.twelve(soma_p,fichas,apostas_do_usuario[i][1])
           fichas = resultado[0]
           vitoria = resultado[1]
-          print(eC.resposta_da_aposta(fichas,vitoria,tipo_de_aposta[i]))
+          print(eC.resposta_da_aposta(fichas,vitoria,apostas_do_usuario[i][0]))
           resultado = tA.pointBet(Point,soma_p,fichas,aposta_point,tipo_de_fase)
           fichas = resultado[0]
           tipo_de_fase = resultado[1]
           vitoria = resultado[2]
-          print(eC.resposta_da_aposta(fichas,vitoria,tipo_de_aposta))
-      elif tipo_de_aposta[i] == 'somente Point':
-          fichas -= aposta[i]
+          print(eC.resposta_da_aposta(fichas,vitoria,apostas_do_usuario[i][0]))
+      elif apostas_do_usuario[i][0] == 'somente Point':
+          fichas -= apostas_do_usuario[i][1]
           resultado = tA.pointBet(Point,soma_p,fichas,aposta_point,tipo_de_fase)
           fichas = resultado[0]
           tipo_de_fase = resultado[1]
           vitoria = resultado[2]
-          print(eC.resposta_da_aposta(fichas,vitoria,tipo_de_aposta))
+          print(eC.resposta_da_aposta(fichas,vitoria,apostas_do_usuario[i][0]))
       else:
           print('resposta inválida, tente novamente')
       i += 1

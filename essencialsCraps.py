@@ -65,29 +65,31 @@ def informa_fase(tipo_de_fase):
     return fim_informa_fase
 
 
-#Define os tipos de aposta que o usuário vai fazer, permitindo mais de uma aposta por rodada
-def escolhe_tipo_aposta():
+
+def escolhe_apostas(fichas):
     print('Que tipo de aposta deseja fazer?\n(caso não queira mais digite terminei)')
-    tipo_de_aposta=[input('Tipo da aposta: ')]
-    i=0
-    while tipo_de_aposta[i]!='terminei':
-        tipo_de_aposta.append(input('Tipo da aposta: '))
-        i+=1
-    del tipo_de_aposta[i]
-    return tipo_de_aposta
-
-
-#define o valor da aposta para cada tipo de aposta feito
-def valor_da_aposta(tipo_de_aposta):
-    valor_da_aposta=[]
-    i=len(tipo_de_aposta)
-    print('Quanto quer apostar em cada uma?')
-    while i>0:
-        valor_da_aposta.append(int(input('aposta: ')))
-        i-=1
-    return valor_da_aposta
-
-
+    tipo_de_aposta=str('')
+    apostas_do_usuario=[]
+    tipo_de_aposta_valido=['Pass Line Bet','Field','Any Craps','Twelve','terminei']
+    total_apostado=0
+    while tipo_de_aposta!='terminei':
+        tipo_de_aposta=input('Tipo da aposta: ')
+        if tipo_de_aposta in tipo_de_aposta_valido:
+            if tipo_de_aposta!='terminei':
+                print('Você tem {0} fichas'.format(fichas-total_apostado))
+                valor_da_aposta=int(input('Valor da aposta: '))
+                if total_apostado+valor_da_aposta<=fichas:
+                    apostas_do_usuario.append((tipo_de_aposta,valor_da_aposta))
+                    total_apostado+=valor_da_aposta
+                else:
+                    print('Aposta recusada,\nNão tem fichas suficientes')
+            else:
+                break
+        else:
+            print('Tipo de aposta inválido')
+    return apostas_do_usuario
+            
+    
 #função que computa e imprime o resultado da aposta feita pelo usuário
 def resposta_da_aposta(fichas,vitoria,tipo_de_aposta):
     if vitoria == True:
