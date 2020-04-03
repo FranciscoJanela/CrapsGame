@@ -75,7 +75,7 @@ def escolhe_apostas(fichas):
     total_apostado=0
     while tipo_de_aposta!='terminei':
         tipo_de_aposta=input('Tipo da aposta: ')
-        if tipo_de_aposta in tipo_de_aposta_valido:
+        if tipo_de_aposta in tipo_de_aposta_valido and tipo_de_aposta not in apostas_do_usuário:
             if tipo_de_aposta!='terminei':
                 print('Você tem {0} fichas'.format(fichas-total_apostado))
                 valor_da_aposta=int(input('Valor da aposta: '))
