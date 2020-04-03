@@ -28,7 +28,7 @@ def introducao_do_jogo(username):
 
 #função que imprime resposta caso o usuário não queira mais apostar
 def sair_do_jogo(username,fichas):
-    print('{0}'.format(str('*')*40))
+    print('\n{0}'.format(str('*')*40))
     print('Obrigado por jogar, {0}'.format(username))
     print('Saiu do jogo com {0} fichas.'.format(fichas))
     print('Volte sempre!')
@@ -38,7 +38,7 @@ def sair_do_jogo(username,fichas):
 
 #função que imprime a resposta ao usuário caso acabem suas fichas
 def fichas_acabaram(username):
-    print('{0}'.format(str('*')*40))
+    print('\n{0}'.format(str('*')*40))
     print('Que pena... Suas fichas acabaram.')
     print('Volte sempre!')
     fim_do_jogo = 40*str('*')
@@ -61,8 +61,31 @@ def informa_fase(tipo_de_fase):
     else:
         print('Está na fase Point,\ntem disponível os seguintes tipos de aposta')
         print(' - Field\n - Any Craps\n - Twelve\n - somente Point')
-    fim_informa_fase = '(para escolher digite exatamente o nome do tipo de aposta)'
+    fim_informa_fase = '(para escolher digite exatamente o nome do tipo de aposta)\n'
     return fim_informa_fase
+
+
+#Define os tipos de aposta que o usuário vai fazer, permitindo mais de uma aposta por rodada
+def escolhe_tipo_aposta():
+    print('Que tipo de aposta deseja fazer?\n(caso não queira mais digite terminei)')
+    tipo_de_aposta=[input('Tipo da aposta: ')]
+    i=0
+    while tipo_de_aposta[i]!='terminei':
+        tipo_de_aposta.append(input('Tipo da aposta: '))
+        i+=1
+    del tipo_de_aposta[i]
+    return tipo_de_aposta
+
+
+#define o valor da aposta para cada tipo de aposta feito
+def valor_da_aposta(tipo_de_aposta):
+    valor_da_aposta=[]
+    i=len(tipo_de_aposta)
+    print('Quanto quer apostar em cada uma?')
+    while i>0:
+        valor_da_aposta.append(int(input('aposta: ')))
+        i-=1
+    return valor_da_aposta
 
 
 #função que computa e imprime o resultado da aposta feita pelo usuário
