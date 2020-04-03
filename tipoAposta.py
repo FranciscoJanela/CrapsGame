@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Definição dos tipos de aposta
+Recebe as fichas que o jogador tem e a aposta feita e devolve o resultado da aposta
 
 @author: Francisco Janela & Nicolas Queiroga
 """
