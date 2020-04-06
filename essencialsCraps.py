@@ -70,27 +70,27 @@ def informa_fase(tipo_de_fase):
 
 
 #Integra o sistema de mais de uma aposta por rodada
-#leva em considera;'ao se a resposta do usu]ario ]e adequada e se pode apostar o valor escrito comparando com as fichas que tem
+#leva em consideração se a resposta do usuário é adequada e se pode apostar o valor escrito comparando com as fichas que tem
 def escolhe_apostas(fichas):
     print('Que tipo de aposta deseja fazer?\n(caso não queira mais digite terminei)')
-    tipo_de_aposta=str('')
-    apostas_do_usuario=[]
-    tipo_de_aposta_valido=['Pass Line Bet','Field','Any Craps','Twelve','Somente Point','terminei']  # Lista dos tipos de aposta possíveis
-    total_apostado=0
-    while tipo_de_aposta!='terminei':
-        tipo_de_aposta=input('Tipo da aposta: ')
+    tipo_de_aposta = str('')
+    apostas_do_usuario = []
+    tipo_de_aposta_valido = ['Pass Line Bet','Field','Any Craps','Twelve','Somente Point','terminei']  # Lista dos tipos de aposta possíveis
+    total_apostado = 0
+    while tipo_de_aposta != 'terminei':
+        tipo_de_aposta = input('Tipo da aposta: ')
         if tipo_de_aposta in tipo_de_aposta_valido:
-            if not any(aposta_ja_feita for aposta_ja_feita in apostas_do_usuario if aposta_ja_feita[0]==tipo_de_aposta):  # Garante que o tipo de aposta ainda não foi feito
-                if tipo_de_aposta!='terminei':
+            if not any(aposta_ja_feita for aposta_ja_feita in apostas_do_usuario if aposta_ja_feita[0] == tipo_de_aposta):  # Garante que o tipo de aposta ainda não foi feito
+                if tipo_de_aposta != 'terminei':
                     print('\nVocê tem {0} fichas'.format(fichas-total_apostado))
-                    valor_da_aposta=input('Valor da aposta: ')
+                    valor_da_aposta = input('Valor da aposta: ')
                     if not valor_da_aposta.isdigit() or '.' in valor_da_aposta or ',' in valor_da_aposta:  # Garante que o valor apostado seja um número
                         print('Aposta recusada,\nO valor da aposta tem de ser inteiro')
                     else:
-                        valor_da_aposta=int(valor_da_aposta)
-                        if total_apostado+valor_da_aposta<=fichas:
+                        valor_da_aposta = int(valor_da_aposta)
+                        if total_apostado + valor_da_aposta <= fichas:
                             apostas_do_usuario.append((tipo_de_aposta,valor_da_aposta))
-                            total_apostado+=valor_da_aposta
+                            total_apostado += valor_da_aposta
                         else:
                             print('\nAposta recusada,\nNão tem fichas suficientes')
                 else:
